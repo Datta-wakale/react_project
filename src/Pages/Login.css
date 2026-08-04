@@ -6,7 +6,7 @@
 
 .login-container {
     width: 100%;
-    min-height: 89vh;
+    min-height: 84vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +14,9 @@
 }
 
 .login-card {
-    width: 400px;
+    width: 300px;
     background: white;
-    padding: 30px;
+    padding: 24px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
@@ -29,7 +29,7 @@
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .form-group label {

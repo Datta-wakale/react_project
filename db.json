@@ -22,25 +22,18 @@
       "password": "priya123"
     },
     {
-      "id": "4",
-      "name": "Amit Kumar",
-      "phone": "9012345678",
-      "email": "amit@gmail.com",
-      "password": "amit123"
-    },
-    {
-      "id": "5",
-      "name": "Sneha Reddy",
-      "phone": "9876501234",
-      "email": "sneha@gmail.com",
-      "password": "sneha123"
-    },
-    {
       "name": "Rohit",
       "phone": "8766948714",
       "email": "rohit@gmail.com",
       "password": "rohit123",
       "id": "F3aABRCxPFo"
+    },
+    {
+      "name": "mayur",
+      "phone": "8907658812",
+      "email": "mr@gmail.com",
+      "password": "mayur123",
+      "id": "LgvnsvbEVvQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -77,57 +77,36 @@ function Register() {
 
   <div className="form-group">
     <label>Name</label>
-    <input
-      type="text"
-      name="name"
-      placeholder="Enter Name"
-      value={user.name}
-      onChange={handleChange}
+    <input type="text" name="name" placeholder="Enter Name"
+      value={user.name} onChange={handleChange}
     />
   </div>
 
   <div className="form-group">
     <label>Phone</label>
-    <input
-      type="text"
-      name="phone"
-      placeholder="Enter Phone"
-      value={user.phone}
-      onChange={handleChange}
-    />
+    <input type="text" name="phone"
+      placeholder="Enter Phone" value={user.phone}
+      onChange={handleChange} />
   </div>
 
   <div className="form-group">
     <label>Email</label>
-    <input
-      type="email"
-      name="email"
-      placeholder="Enter Email"
-      value={user.email}
-      onChange={handleChange}
-    />
+    <input type="email" name="email"
+      placeholder="Enter Email" value={user.email}
+      onChange={handleChange} />
   </div>
 
   <div className="form-group">
     <label>Password</label>
-    <input
-      type="password"
-      name="password"
-      placeholder="Enter Password"
-      value={user.password}
-      onChange={handleChange}
-    />
+    <input type="password" name="password"
+      placeholder="Enter Password" value={user.password}
+      onChange={handleChange} />
   </div>
 
   <div className="form-group">
     <label>Confirm Password</label>
-    <input
-      type="password"
-      name="confirmPassword"
-      placeholder="Confirm Password"
-      value={user.confirmPassword}
-      onChange={handleChange}
-    />
+    <input type="password" name="confirmPassword" placeholder="Confirm Password"
+      value={user.confirmPassword} onChange={handleChange} />
   </div>
 
   <button type="submit" className="register-btn">
@@ -135,8 +114,8 @@ function Register() {
   </button>
 
 </form>
-      </div>
-    </div>
+ </div>
+ </div>
   );
 }
 

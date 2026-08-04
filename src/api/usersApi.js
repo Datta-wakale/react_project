@@ -21,11 +21,16 @@ export const addUser = async (user) => {
 
 // Login User
 export const loginUser = async (email, password) => {
-  const response = await fetch(
-    `${apiUrl}?email=${email}&password=${password}`
+  const response = await fetch(apiUrl);
+
+  const users = await response.json();
+  const loggedInUser = users.find(
+    (user) =>
+      user.email === email &&
+      user.password === password
   );
 
-  return await response.json();
+  return loggedInUser;
 };
 
 // PUT Update User

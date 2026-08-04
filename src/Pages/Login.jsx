@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser} from "../api/usersApi";
+import { loginUser } from "../api/usersApi";
+import { toast } from "react-toastify";
 import "./Login.css";
 
-function Login() {
+function Login({ setLoggedInUser }) {
   const navigate = useNavigate();
-
   const [login, setLogin] = useState({
     email: "",
     password: "",
   });
-
   const handleChange = (event) => {
     setLogin({
       ...login,
@@ -32,20 +31,25 @@ function Login() {
     }
 
     try {
-      const users = await loginUser(login.email, login.password);
+      const loggedInUser = await loginUser(
+        login.email,
+        login.password
+      );
 
-      if (users.length > 0) {
-        localStorage.setItem("loggedInUser", JSON.stringify(users[0]));
+      if (loggedInUser) {
+        // Save user in localStorage
+        localStorage.setItem( "loggedInUser",JSON.stringify(loggedInUser));
 
-        alert("Login Successful");
-
+        // Update React state
+        setLoggedInUser(loggedInUser);
+        toast.success("Login successful");
         navigate("/");
       } else {
-        alert("Invalid Email or Password");
+        toast.error("Invalid Login Credentials");
       }
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 
@@ -58,25 +62,18 @@ function Login() {
           <div className="form-group">
             <label>Email</label>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              value={login.email}
-              onChange={handleChange}
-            />
+            <input type="email"  name="email"
+              placeholder="Enter your email" value={login.email}
+              onChange={handleChange} />
           </div>
 
           <div className="form-group">
             <label>Password</label>
 
-            <input
-              type="password"
-              name="password"
+            <input  type="password" name="password"
               placeholder="Enter your password"
               value={login.password}
-              onChange={handleChange}
-            />
+              onChange={handleChange} />
           </div>
 
           <button type="submit" className="login-btn">
