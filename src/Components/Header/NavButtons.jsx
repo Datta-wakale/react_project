@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import {toast} from "react-toastify";
 function NavButtons({ loggedInUser, setLoggedInUser }) {
   const navigate = useNavigate();
 
@@ -7,6 +7,7 @@ function NavButtons({ loggedInUser, setLoggedInUser }) {
     localStorage.removeItem("loggedInUser");
     setLoggedInUser(null);
     navigate("/login");
+    toast.info("Logged out successfully");
   };
 
   return (

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../api/usersApi";
 import "./Register.css";
-function Register() {
+function Register({title="Register"}) {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -71,7 +71,7 @@ function Register() {
   return (
     <div className="register-container">
       <div className="register-card">
-        <h2>Register</h2>
+        <h2>{title}</h2>
 
 <form onSubmit={handleSubmit}>
 
@@ -110,7 +110,7 @@ function Register() {
   </div>
 
   <button type="submit" className="register-btn">
-    Register
+    {title}
   </button>
 
 </form>

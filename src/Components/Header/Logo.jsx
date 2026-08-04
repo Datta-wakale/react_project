@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 
 function Logo() {
   return (
-    <h2 className="logo">
-      Movie<span>App</span>
-    </h2>
+    <Link to="/" className="logo-link" style={{textDecoration: "none"}}>
+      <h2 className="logo">
+        Movie<span>App</span>
+      </h2>
+    </Link>
   );
 }
 

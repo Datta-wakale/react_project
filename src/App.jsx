@@ -29,8 +29,7 @@ function App() {
 
       <Header
   loggedInUser={loggedInUser}
-  setLoggedInUser={setLoggedInUser}
-/>
+  setLoggedInUser={setLoggedInUser} />
       
       <Routes>
         <Route path="/" element= {<Home/>} />
@@ -42,8 +41,7 @@ function App() {
     </BrowserRouter>
     <ToastContainer position="top-center"
        autoClose={2000}
-      closeButton={false}
-/>
+      closeButton={false} />
      </>
   );
 }

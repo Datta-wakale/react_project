@@ -1,40 +1,48 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Datta Wakale",
-      "phone": "9876543210",
+      "name": "datta",
+      "phone": "8766948714",
       "email": "datta@gmail.com",
-      "password": "datta123"
-    },
-    {
-      "id": "2",
-      "name": "Rahul Sharma",
-      "phone": "9123456789",
-      "email": "rahul@gmail.com",
-      "password": "rahul123"
-    },
-    {
-      "id": "3",
-      "name": "Priya Patel",
-      "phone": "9988776655",
-      "email": "priya@gmail.com",
-      "password": "priya123"
+      "password": "datta123",
+      "id": "h_OqVbZsZd0"
     },
     {
       "name": "Rohit",
-      "phone": "8766948714",
+      "phone": "9921594812",
       "email": "rohit@gmail.com",
       "password": "rohit123",
-      "id": "F3aABRCxPFo"
+      "id": "E0mMESCHMvI"
     },
     {
-      "name": "mayur",
-      "phone": "8907658812",
-      "email": "mr@gmail.com",
-      "password": "mayur123",
-      "id": "LgvnsvbEVvQ"
+      "name": "Tarun",
+      "phone": "9044210923",
+      "email": "tarun@gmail.com",
+      "password": "tarun123",
+      "id": "fXGZ5H-OFzc"
+    },
+    {
+      "name": "Pravin",
+      "phone": "7755340912",
+      "email": "pravin@gmail.com",
+      "password": "pravin123",
+      "id": "p-5JZ9bT2Kc"
+    },
+    {
+      "name": "Abhi",
+      "phone": "8329944117",
+      "email": "abhi@gmail.com",
+      "password": "abhi123",
+      "id": "hbI0rSaZm_g"
+    },
+    {
+      "name": "Vicky",
+      "phone": "8977201200",
+      "email": "vicky@gmail.com",
+      "password": "vicky123",
+      "id": "ZAOffyupRrs"
     }
   ],
+  "booking": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
