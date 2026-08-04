@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "name": "datta",
+      "name": "Datta Wakale",
       "phone": "8766948714",
       "email": "datta@gmail.com",
       "password": "datta123",
       "id": "h_OqVbZsZd0"
-    },
-    {
-      "name": "Rohit",
-      "phone": "9921594812",
-      "email": "rohit@gmail.com",
-      "password": "rohit123",
-      "id": "E0mMESCHMvI"
     },
     {
       "name": "Tarun",
