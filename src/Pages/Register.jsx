@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../api/usersApi";
 import "./Register.css";
-function Register({title="Register"}) {
+function Register({title="Register", onSuccess, onCancel}) {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -12,7 +12,7 @@ function Register({title="Register"}) {
     password: "",
     confirmPassword: "",
   });
-
+  
   const handleChange = (event) => {
     setUser({
       ...user,
@@ -56,16 +56,19 @@ function Register({title="Register"}) {
     };
 
     try {
-      await addUser(newUser);
+  await addUser(newUser);
 
-      alert("Registration Successful");
+  if (onSuccess) {
+    onSuccess();
+  } else {
+    alert("Registration Successful");
+    navigate("/login");
+  }
 
-      navigate("/login");
-
-    } catch (error) {
-      console.log(error);
-      alert("Registration Failed");
-    }
+} catch (error) {
+  console.log(error);
+  alert("Registration Failed");
+}
   };
 
   return (
@@ -73,7 +76,7 @@ function Register({title="Register"}) {
       <div className="register-card">
         <h2>{title}</h2>
 
-<form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit}>
 
   <div className="form-group">
     <label>Name</label>
@@ -112,6 +115,9 @@ function Register({title="Register"}) {
   <button type="submit" className="register-btn">
     {title}
   </button>
+  { onCancel && (<button type="button" className="cancel-btn" onClick={onCancel}>
+    Cancel
+  </button>)}
 
 </form>
  </div>

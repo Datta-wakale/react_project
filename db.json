@@ -1,41 +1,4 @@
 {
-  "users": [
-    {
-      "name": "Datta Wakale",
-      "phone": "8766948714",
-      "email": "datta@gmail.com",
-      "password": "datta123",
-      "id": "h_OqVbZsZd0"
-    },
-    {
-      "name": "Tarun",
-      "phone": "9044210923",
-      "email": "tarun@gmail.com",
-      "password": "tarun123",
-      "id": "fXGZ5H-OFzc"
-    },
-    {
-      "name": "Pravin",
-      "phone": "7755340912",
-      "email": "pravin@gmail.com",
-      "password": "pravin123",
-      "id": "p-5JZ9bT2Kc"
-    },
-    {
-      "name": "Abhi",
-      "phone": "8329944117",
-      "email": "abhi@gmail.com",
-      "password": "abhi123",
-      "id": "hbI0rSaZm_g"
-    },
-    {
-      "name": "Vicky",
-      "phone": "8977201200",
-      "email": "vicky@gmail.com",
-      "password": "vicky123",
-      "id": "ZAOffyupRrs"
-    }
-  ],
-  "booking": [],
+  "users": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

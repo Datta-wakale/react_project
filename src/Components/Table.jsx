@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { getUsers, deleteUser, updateUser } from "../api/usersApi";
 import "../Components/Table.css";
 import DeleteDialog from "./DeleteDialog";
 import EditDialog from "./EditDialog";
 import { toast } from "react-toastify";
 import Register from "../Pages/Register";
+import { Dialog, DialogContent } from "@mui/material";
 const Table = () => {
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
@@ -18,8 +19,18 @@ const Table = () => {
     };
 
     useEffect(() => {
-        loadUsers();
+        const fetchUsers = async()=> {
+
+            await loadUsers();
+        }
+        fetchUsers();
     }, []);
+
+    const handleRegisterSuccess = async () => {
+  await loadUsers();
+  addUserCancel();
+  toast.success("User added successfully");
+};
 
     const openDeleteDialog = (user) => {
         setSelectedUser(user);
@@ -71,7 +82,9 @@ const Table = () => {
     return (
         <>
             <button className="add-user-btn" onClick={handleAddUser}> addUser</button>
-            <table className="container">
+            { users.length > 0 ?
+            
+                (<table className="container">
                 <thead className="columns-header">
                     <tr>
                         <th>Name</th>
@@ -105,7 +118,8 @@ const Table = () => {
                         );
                     })}
                 </tbody>
-            </table>
+            </table>) : ( <p className="error-msg">No users found</p>)}
+            
             <DeleteDialog
                 open={isDialogOpen}
                 user={selectedUser}
@@ -118,14 +132,17 @@ const Table = () => {
                 handleSave={handleSave}
                 handleClose={handleEditCancel}
             />
-            {/* <Dialog
-                open={addOpen}
-                onClose={addUserCancel}
-            >
+            { <Dialog
+                open={addUser}
+                onClose={addUserCancel} >
                 <DialogContent>
-                    <Register title="Add User" />
+                   <Register
+                        title="Add User"
+                        onSuccess={handleRegisterSuccess}
+                        onCancel={addUserCancel}
+                    />
                 </DialogContent>
-            </Dialog> */}
+            </Dialog> }
         </>
     );
 };
