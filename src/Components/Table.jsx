@@ -27,9 +27,9 @@ const Table = () => {
     }, []);
 
     const handleRegisterSuccess = async () => {
-  await loadUsers();
-  addUserCancel();
-  toast.success("User added successfully");
+         await loadUsers();
+         addUserCancel();
+         toast.success("User added successfully");
 };
 
     const openDeleteDialog = (user) => {
@@ -61,7 +61,7 @@ const Table = () => {
     };
 
     const handleSave = async (updatedUser) => {
-        try {
+        try{
             await updateUser(updatedUser.id, updatedUser);
             await loadUsers();
             toast.success("User updated successfully");
@@ -110,7 +110,7 @@ const Table = () => {
 
                                     <button
                                         className="delete-btn"
-                                        onClick={() => openDeleteDialog(user)} >
+                                        onClick = {() => openDeleteDialog(user)} >
                                         Delete
                                     </button>
                                 </td>
@@ -132,7 +132,7 @@ const Table = () => {
                 handleSave={handleSave}
                 handleClose={handleEditCancel}
             />
-            { <Dialog
+             <Dialog
                 open={addUser}
                 onClose={addUserCancel} >
                 <DialogContent>
@@ -142,7 +142,8 @@ const Table = () => {
                         onCancel={addUserCancel}
                     />
                 </DialogContent>
-            </Dialog> }
+            </Dialog> 
+           
         </>
     );
 };

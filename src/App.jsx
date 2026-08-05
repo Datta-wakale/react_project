@@ -6,7 +6,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Table from "./Components/Table"
 import {getUsers} from "./api/usersApi";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify"; 
 function App() {
 
   const [users, setUsers]= useState([]);
@@ -28,8 +28,8 @@ function App() {
     <BrowserRouter>
 
       <Header
-  loggedInUser={loggedInUser}
-  setLoggedInUser={setLoggedInUser} />
+        loggedInUser={loggedInUser}
+        setLoggedInUser={setLoggedInUser} />
       
       <Routes>
         <Route path="/" element= {<Home/>} />

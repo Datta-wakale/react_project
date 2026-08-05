@@ -1,4 +1,26 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Datta",
+      "phone": "8766948714",
+      "email": "datta@gmail.com",
+      "password": "datta123",
+      "id": "ndXbZk4zA1Q"
+    },
+    {
+      "name": "Rohit",
+      "phone": "9921491812",
+      "email": "rohit@gmail.com",
+      "password": "rohit123",
+      "id": "6QWwAxChfO8"
+    },
+    {
+      "name": "Mayur",
+      "phone": "9054321412",
+      "email": "mr@gmail.com",
+      "password": "mayur123",
+      "id": "3juj2U5PE8A"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

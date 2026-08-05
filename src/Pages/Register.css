@@ -69,3 +69,8 @@
 .register-btn:hover {
     background: #1f57d6;
 }
+
+ .error-msg {
+    color: rgb(214, 58, 58);
+    font-size: 12px !important;
+}
