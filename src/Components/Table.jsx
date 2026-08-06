@@ -22,7 +22,6 @@ const Table = () => {
 
     useEffect(() => {
         const fetchUsers = async()=> {
-
             await loadUsers();
         }
         fetchUsers();
@@ -75,7 +74,6 @@ const Table = () => {
         }
     };
     const handleAddUser = () => {
-
         setAddUser(true);
     }
     const addUserCancel = () => {

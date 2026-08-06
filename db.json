@@ -22,5 +22,31 @@
       "id": "3juj2U5PE8A"
     }
   ],
+  "movies":[
+    {
+      "id":1,
+      "title":"Leo",
+      "language":"Tamil",
+      "genre":"Action",
+      "rating":7.5,
+      "image":"/images/hero.png"
+    },
+    {
+      "id":2,
+      "title":"Avengers",
+      "language":"English",
+      "genre":"Action",
+      "rating":8.4,
+      "image":"/images/hero.png"
+    },
+    {
+      "id":3,
+      "title":"Spider Man",
+      "language":"English",
+      "genre":"Action",
+      "rating":9.3,
+      "image":"/images/hero.png"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,8 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import {toast} from "react-toastify";
-function NavButtons({ loggedInUser, setLoggedInUser }) {
-  const navigate = useNavigate();
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext";
 
+function NavButtons() {
+  const navigate = useNavigate();
+  const {loggedInUser, setLoggedInUser} = useContext(UserContext);
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
     setLoggedInUser(null);

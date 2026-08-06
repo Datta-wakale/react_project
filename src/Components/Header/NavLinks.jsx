@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavLinks() {
   const navLinks = [
@@ -12,7 +12,14 @@ function NavLinks() {
     <ul className="nav-links">
       {navLinks.map((link, index) => (
         <li key={index}>
-          <Link to={link.path}>{link.name}</Link>
+          <NavLink to={link.path} style={({ isActive }) => ({
+            textDecoration: "none",
+            color: isActive ? "#f59e0b" : "white",
+            borderBottom: isActive ? "2px solid #f59e0b" : "none",
+            // fontWeight: isActive ? "bold" : "normal",
+          })}>
+            {link.name}
+          </NavLink>
         </li>
       ))}
     </ul>

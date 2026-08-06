@@ -1,18 +1,23 @@
 import "./Header.css";
-
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import NavButtons from "./NavButtons";
+import SearchBar from "../SearchBar/SearchBar";
 
-function Header({ loggedInUser, setLoggedInUser }) {
+function Header({ movies, setMovies }) {
+
   return (
     <header className="header-section">
       <Logo />
+
       <NavLinks />
-      <NavButtons
-        loggedInUser={loggedInUser}
-        setLoggedInUser={setLoggedInUser}
+
+      <SearchBar
+        movies={movies}
+       setMovies={setMovies} 
       />
+
+      <NavButtons />
     </header>
   );
 }

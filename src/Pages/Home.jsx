@@ -1,14 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { useState , useMemo , useCallback} from "react";
 import "./Home.css";
-
-function Home() {
+import MovieCard from "../Components/MovieCard/MovieCard";
+function Home({movies}) {
+  const [minRating,setMinRating] = useState(7);
   const navigate = useNavigate();
 
-  const goToUsersTable = () => {
+  const goToUsersTable = useCallback(()=> {
+
     navigate("/table");
-  };
+  }, [navigate]);
+
+  const sortedMovies = useMemo(()=> {
+
+    return [...movies]
+    .filter(movie=> movie.rating >= minRating)
+  },[movies,minRating]).sort((a,b)=> b.rating - a.rating);
 
   return (
+    <>
+    <div className="movies-container" >
+      { sortedMovies.length > 0 ? (sortedMovies.map((movie)=> {
+        return(
+          <MovieCard key={movie.id}
+            movie={movie}
+          onClick={() => navigate(`/movie/${movie.id}`)} />
+        )
+      })) : ( <h3>No Movies Found</h3>) }
+
+    </div>
     <div className="home-container">
       <h1>Welcome to Movie App</h1>
 
@@ -19,6 +39,7 @@ function Home() {
         View Users
       </button>
     </div>
+     </>
   );
 }
 

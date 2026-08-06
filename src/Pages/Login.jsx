@@ -1,10 +1,12 @@
-import { useState,useRef, useEffect} from "react";
+import { useState,useRef, useEffect,useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api/usersApi";
 import { toast } from "react-toastify";
+import { UserContext } from "../context/userContext";
 import "./Login.css";
 
-function Login({ setLoggedInUser }) {
+function Login() {
+  const {setLoggedInUser} = useContext(UserContext);
   const navigate = useNavigate();
   const [login, setLogin] = useState({
     email: "",
@@ -48,7 +50,7 @@ function Login({ setLoggedInUser }) {
         toast.success("Login successful");
         navigate("/");
       } else {
-        toast.error("Invalid Login Credentials");
+        toast.error("invalid email or password");
       }
     } catch (error) {
       console.log(error);

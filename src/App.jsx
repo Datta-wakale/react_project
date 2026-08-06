@@ -7,19 +7,25 @@ import Register from "./Pages/Register";
 import Table from "./Components/Table"
 import {getUsers} from "./api/usersApi";
 import { ToastContainer } from "react-toastify"; 
+import { getMovies } from "./api/MoviesApi";
+import MoviesDetails from "./Components/MovieCard/MoviesDetails";
 function App() {
 
   const [users, setUsers]= useState([]);
-   const [loggedInUser, setLoggedInUser] = useState(
-    JSON.parse(localStorage.getItem("loggedInUser"))
-  );
+  const [movie, setMovie] = useState([]);
+  
   const loadUsers = async() => {
     const response = await getUsers();
     setUsers(response);
   }
-
+  const loadMovies= async()=> {
+    const response = await getMovies();
+    setMovie(response); 
+  }
+ 
   useEffect(()=> {
      loadUsers();
+     loadMovies();
   },[])
 
   return (
@@ -27,15 +33,14 @@ function App() {
    
     <BrowserRouter>
 
-      <Header
-        loggedInUser={loggedInUser}
-        setLoggedInUser={setLoggedInUser} />
+      <Header movies={movie} setMovies={setMovie}/>
       
       <Routes>
-        <Route path="/" element= {<Home/>} />
-        <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
+        <Route path="/" element= {<Home movies={movie}/>} />
+        <Route path="/login" element={<Login  />} />
         <Route path="/register" element={<Register />} />
         <Route path="/table" element={<Table />} />
+        <Route path="/movie/:id" element={<MoviesDetails movies={movie}/>} />
       </Routes>
 
     </BrowserRouter>
