@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import  { useState, useEffect ,useContext} from "react";
 import { getUsers, deleteUser, updateUser } from "../api/usersApi";
 import "../Components/Table.css";
 import DeleteDialog from "./DeleteDialog";
@@ -6,12 +6,14 @@ import EditDialog from "./EditDialog";
 import { toast } from "react-toastify";
 import Register from "../Pages/Register";
 import { Dialog, DialogContent } from "@mui/material";
+import { UserContext } from "../context/userContext";
 const Table = () => {
     const [users, setUsers] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [editIsOpen, setEditIsOpen] = useState(false);
     const [addUser, setAddUser] = useState(false);
+    const {loggedInUser} = useContext(UserContext);
     // Load all users
     const loadUsers = async () => {
         const result = await getUsers();
@@ -81,6 +83,7 @@ const Table = () => {
     }
     return (
         <>
+        <h3>Welcome{loggedInUser?.name}</h3>
             <button className="add-user-btn" onClick={handleAddUser}> addUser</button>
             { users.length > 0 ?
             

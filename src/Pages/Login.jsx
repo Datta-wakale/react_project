@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useRef, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api/usersApi";
 import { toast } from "react-toastify";
@@ -16,7 +16,10 @@ function Login({ setLoggedInUser }) {
       [event.target.name]: event.target.value,
     });
   };
-
+  const inputRef = useRef(null);
+  useEffect(()=> {
+      inputRef.current.focus();
+  },[]);
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -64,7 +67,7 @@ function Login({ setLoggedInUser }) {
 
             <input type="email"  name="email"
               placeholder="Enter your email" value={login.email}
-              onChange={handleChange} />
+              onChange={handleChange} ref={inputRef} />
           </div>
 
           <div className="form-group">
@@ -73,7 +76,7 @@ function Login({ setLoggedInUser }) {
             <input  type="password" name="password"
               placeholder="Enter your password"
               value={login.password}
-              onChange={handleChange} />
+              onChange={handleChange}  />
           </div>
 
           <button type="submit" className="login-btn">
