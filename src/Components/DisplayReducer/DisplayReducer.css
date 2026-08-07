@@ -1,0 +1,67 @@
+/* DisplayReducer.css */
+
+.reducer-btn-container {
+ 
+  /* margin: 40px auto; */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reducer-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.reducer-btn-container nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.reducer-btn-container a {
+  text-decoration: none;
+}
+
+.player-nav-btn,
+.team-nav-btn {
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.player-nav-btn {
+  background-color: #2563eb;
+}
+
+.player-nav-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.team-nav-btn {
+  background-color: #16a34a;
+}
+
+.team-nav-btn:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+}
+
+.reducer-btn-container hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 20px 0;
+}
+

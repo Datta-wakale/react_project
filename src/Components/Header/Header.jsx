@@ -4,7 +4,7 @@ import NavLinks from "./NavLinks";
 import NavButtons from "./NavButtons";
 import SearchBar from "../SearchBar/SearchBar";
 
-function Header({ movies, setMovies }) {
+function Header({ movies,filteredMovies, setFilteredMovies }) {
 
   return (
     <header className="header-section">
@@ -12,9 +12,9 @@ function Header({ movies, setMovies }) {
 
       <NavLinks />
 
-      <SearchBar
-        movies={movies}
-       setMovies={setMovies} 
+      <SearchBar movies={movies}
+        filteredMovies={filteredMovies}
+        setFilteredMovies={setFilteredMovies}
       />
 
       <NavButtons />

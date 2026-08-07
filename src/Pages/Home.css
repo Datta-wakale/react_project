@@ -48,3 +48,13 @@
   margin-left: 56px; 
   padding: 20px;
 }
+.view-players{
+  display: flex;
+  cursor: pointer;
+  margin: 12px auto;
+  border-radius: 6px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+}

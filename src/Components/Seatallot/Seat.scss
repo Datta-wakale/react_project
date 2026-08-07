@@ -1,0 +1,43 @@
+
+// Variables
+
+$seat-size: 45px;
+$border-radius: 6px;
+$border-color: #ccc;
+
+$available-bg: white;
+$available-text: black;
+
+$selected-bg: #2196f3;
+$selected-text: white;
+
+$booked-bg: #4caf50;
+$booked-text: white;
+
+// Seat Styles
+
+.seat {
+  width: $seat-size;
+  height: $seat-size;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  cursor: pointer;
+
+  &.available {
+    background-color: $available-bg;
+    color: $available-text;
+  }
+
+  &.selected {
+    background-color: $selected-bg;
+    color: $selected-text;
+    border: none;
+  }
+
+  &.booked {
+    background-color: $booked-bg;
+    color: $booked-text;
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}

@@ -11,6 +11,10 @@ function Home({movies}) {
     navigate("/table");
   }, [navigate]);
 
+  const viewReducer = useCallback(()=> {
+
+    navigate("/display-reducer")
+  }, [navigate]);
   const sortedMovies = useMemo(()=> {
 
     return [...movies]
@@ -19,6 +23,7 @@ function Home({movies}) {
 
   return (
     <>
+    <button className="view-players" onClick={viewReducer}>Use Reducer Example</button>
     <div className="movies-container" >
       { sortedMovies.length > 0 ? (sortedMovies.map((movie)=> {
         return(

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
 
 const MoviesDetails = ({ movies }) => {
 
@@ -24,8 +25,9 @@ const MoviesDetails = ({ movies }) => {
         <p>
           This is the details page of <strong>{movie.title}</strong>.
         </p>
-
+        <Link to="/seatselection">
         <button>Book Ticket</button>
+        </Link>
       </div>
     </>
   );

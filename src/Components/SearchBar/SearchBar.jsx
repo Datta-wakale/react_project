@@ -1,9 +1,9 @@
 import { useState, useTransition } from "react";
 
-function SearchBar({ movies, setMovies }) {
+function SearchBar({ movies, setFilteredMovies }) {
   const [search, setSearch] = useState("");
   const [isPending, startTransition] = useTransition();
- 
+
   const handleSearch = (e) => {
     const value = e.target.value;
 
@@ -16,17 +16,22 @@ function SearchBar({ movies, setMovies }) {
         movie.title.toLowerCase().includes(value.toLowerCase())
       );
 
-      setMovies(filtered);
+      setFilteredMovies(filtered);
     });
   };
 
   return (
     <>
-      <input  type="text"
-        placeholder="Search Movie..." value={search}
-        onChange={handleSearch} />
+      <input
+        type="text"
+        placeholder="Search movies..."
+        value={search}
+        onChange={handleSearch}
+      />
 
-        {isPending && <p style={{color:"white"}}>searching ..... </p>}
+      {isPending && (
+        <p style={{ color: "white" }}>Searching...</p>
+      )}
     </>
   );
 }

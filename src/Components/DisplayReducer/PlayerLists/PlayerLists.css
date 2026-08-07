@@ -1,0 +1,49 @@
+.player-container {
+
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.player-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.player-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+}
+
+.player-card h3 {
+    margin: 0;
+    color: #222;
+}
+.player-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Select button */
+.player-card button {
+    padding: 8px 12px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.player-card button:hover {
+    background-color: #0d47a1;
+
+}
